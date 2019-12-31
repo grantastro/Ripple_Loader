@@ -1,0 +1,73 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	font-family: 'Oswald', sans-serif;
+	padding-top: 200px;
+	background: #ff5349;
+	height: 100%;
+	margin: auto;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.container {
+	width: 700px;
+	display: flex;
+	margin: 0 auto;
+	justify-content: center;
+	align-self: center;
+}
+
+.card {
+	/* Add shadows to create the "card" effect */
+	background: #fff;
+	text-align: center;
+	box-shadow: 0 4px 8px 0 #00000065;
+	width: 100px;
+	border-radius: 5px;
+	transition: 0.3s;
+	padding: 10px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.ripple {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+}
+
+.ripple div {
+	position: absolute;
+	border: 3px solid #ff5349;
+	opacity: 1;
+	border-radius: 50%;
+	animation: ripple 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.ripple div:nth-child(2) {
+	animation-delay: -1s;
+}
+
+@keyframes ripple {
+	0% {
+		top: 36px;
+		left: 36px;
+		width: 0;
+		height: 0;
+		opacity: 1;
+	}
+
+	100% {
+		top: 0px;
+		left: 0px;
+		width: 72px;
+		height: 72px;
+		opacity: 0;
+	}
+}
